@@ -24,7 +24,7 @@ CryptoAPIDataResponseJSON = json.dumps(CryptoAPIDataResponse)
 
 print(CryptoAPIDataResponseJSON)
 
-# load into Event Hub in imathco
+# load into Event Hub in imathco (use your own for the exercise)
 
 import nest_asyncio
 nest_asyncio.apply()
@@ -43,11 +43,6 @@ async def run():
         event_data_batch = await producer.create_batch()
 
         # Add events to the batch.
-      # event_data_batch.add(EventData('First event '))
-      # event_data_batch.add(EventData('Second event'))
-      # event_data_batch.add(EventData('Third event'))
-      # event_data_batch.add(EventData('imath event'))
-      #  event_data_batch.add(EventData(CryptoAPIDataResponse))
         event_data_batch.add(EventData(CryptoAPIDataResponseJSON))
 
         # Send the batch of events to the event hub.
