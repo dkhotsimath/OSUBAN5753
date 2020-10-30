@@ -1,0 +1,7 @@
+SELECT 
+strftime('%m-%d-%Y', datetime(Col1, 'unixepoch')) as PriceDateString,
+cast(strftime('%Y',datetime(Col1, 'unixepoch')) as int) as PriceYear,
+strftime('%m',datetime(Col1, 'unixepoch')) as PriceMonth,
+strftime('%w',datetime(Col1, 'unixepoch')) as PriceWeek,
+Col2 as Price
+from t1;
